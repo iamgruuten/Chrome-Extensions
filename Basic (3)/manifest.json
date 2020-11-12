@@ -1,0 +1,22 @@
+{
+    "manifest_version":2,
+    "name": "Overflow Extension Sketch",
+    "version" : "1",
+    "content_scripts":[
+        {
+            "matches":[
+                "<all_urls>"
+            ],
+            "js":["p5.js","sketch.js"]
+        }
+    ],
+    "icons":{
+        "128": "images/icon128.png",
+        "48": "images/icon48.png",
+        "16": "images/icon16.png"
+
+    },
+    "browser_action":{
+        "default_icon": "images/icon16.png"
+    }
+}

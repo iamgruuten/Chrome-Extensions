@@ -1,0 +1,36 @@
+{
+  "version": "2",
+  "name": "Overflow DarkMode",
+  "manifest_version": 2,
+  "short_name": "DarkFlow Project",
+  "description": "Weekly Session Project",
+  "permissions": ["tabs","storage", "<all_urls>", "contextMenus"],
+  "web_accessible_resources": ["css/*.css"],
+  "offline_enabled": true,
+  "icons": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon.png"
+  },
+  "browser_action": {
+      "default_icon"    : "icons/icon.png",
+      "default_popup"   : "templates/popup.html"
+  },
+  "content_scripts": [
+        {
+            "all_frames": true,
+            "match_about_blank": true,
+            "matches": ["<all_urls>"],
+            "run_at": "document_start",
+            "exclude_globs": ["*/chrome/newtab*"],
+            "js": ["js/main.js"]
+        },
+        {
+            "all_frames": true,
+            "match_about_blank": true,
+            "matches": ["<all_urls>"],
+            "run_at": "document_start",
+            "exclude_globs": ["*/chrome/newtab*"],
+            "css": ["css/universal.css"]
+        }
+    ]
+}
